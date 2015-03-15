@@ -1,4 +1,4 @@
-angular.module('app', ['ui.router', 'ngSanitize', 'app.controllers'])
+angular.module('app', ['ui.router', 'ngSanitize', 'app.controllers', 'app.factories', 'app.services'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 	$stateProvider
