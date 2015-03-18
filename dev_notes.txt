@@ -1,0 +1,7 @@
+Helpful links:
+
+http://andreareginato.github.io/oauth-ng/
+
+http://stackoverflow.com/questions/22537311/angular-ui-router-login-authentication
+
+http://anandsekar.github.io/oauth2-with-angularjs/
