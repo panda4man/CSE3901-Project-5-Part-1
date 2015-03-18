@@ -12,46 +12,53 @@
 </head>
 
 <body ng-app="app">
-    <header>
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper blue lighten-1">
-                    <a href="#" class="brand-logo left">Logo</a>
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
-                        <li><a href="javascript:;">hellow</a></li>
-                    </ul>
-                </div>
-            </nav>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper deep-orange darken-4">
+                
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="sass.html">Rotten Tomatoes</a>
+                    </li>
+                    <li><a href="components.html">Google Calendar</a>
+                    </li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="sass.html">Rotten Tomatoes</a>
+                    </li>
+                    <li><a href="components.html">Google Calendar</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="section no-pad-bot grey darken-4" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <h3 class="header center orange-text">Orange Lazarus Movie Scheduler</h1>
+            <div class="row center">
+                <h5 class="header col s12 light white-text">Make sure you never miss another premier</h5>
+            </div>
+            <br>
+            <br>
         </div>
-    </header>
+        <div class=""><img class="responsive-img" src="images/background.jpg"></div>
+    </div>
     <main ui-view>
     </main>
-    <footer class="page-footer blue lighten-1">
+    <footer class="page-footer grey darken-1">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a>
-                        </li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a>
-                        </li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a>
-                        </li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a>
-                        </li>
-                    </ul>
+                    <h5 class="white-text">CSE 3901 | Orange Lazarus</h5>
+                    <p class="grey-text text-lighten-4">This web app is part of the CSE 3901 Spring 2015 Project 5</p>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                Made with <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
             </div>
         </div>
     </footer>
