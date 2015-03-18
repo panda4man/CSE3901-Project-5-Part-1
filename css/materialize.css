@@ -2047,10 +2047,15 @@ img.responsive-img, video.responsive-video {
   max-width: 100%;
   height: auto; }
 
+img.responsive-img-h {
+  max-height: 100%;
+  width: auto; }
+
 .parallax-container {
+
   position: relative;
   overflow: hidden;
-  height: 500px; }
+  padding-top: 100px; }
 
 .parallax {
   position: absolute;
@@ -2060,7 +2065,7 @@ img.responsive-img, video.responsive-video {
   bottom: 0;
   z-index: -1; }
   .parallax img {
-    display: none;
+    /*display: none;*/
     position: absolute;
     bottom: 0;
     width: 100%; }
@@ -2511,8 +2516,8 @@ span.badge {
 
 @font-face {
   font-family: "Material-Design-Icons";
-  src: url("../font/material-design-icons/Material-Design-Icons.eot?-g7cqhn");
-  src: url("../font/material-design-icons/Material-Design-Icons.eot?#iefix-g7cqhn") format("embedded-opentype"), url("../font/material-design-icons/Material-Design-Icons.woff?-g7cqhn") format("woff"), url("../font/material-design-icons/Material-Design-Icons.ttf?-g7cqhn") format("truetype"), url("../font/material-design-icons/Material-Design-Icons.svg?-g7cqhn#Material-Design-Icons") format("svg");
+  src: url("../assets/font/material-design-icons/Material-Design-Icons.eot?-g7cqhn");
+  src: url("../assets/font/material-design-icons/Material-Design-Icons.eot?#iefix-g7cqhn") format("embedded-opentype"), url("../assets/font/material-design-icons/Material-Design-Icons.woff?-g7cqhn") format("woff"), url("../assets/font/material-design-icons/Material-Design-Icons.ttf?-g7cqhn") format("truetype"), url("../assets/font/material-design-icons/Material-Design-Icons.svg?-g7cqhn#Material-Design-Icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -5143,27 +5148,27 @@ nav {
 
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/roboto/Roboto-Thin.ttf");
+  src: url("../assets/font/roboto/Roboto-Thin.ttf");
   font-weight: 200; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/roboto/Roboto-Light.ttf");
+  src: url("../assets/font/roboto/Roboto-Light.ttf");
   font-weight: 300; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/roboto/Roboto-Regular.ttf");
+  src: url("../assets/font/roboto/Roboto-Regular.ttf");
   font-weight: 400; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/roboto/Roboto-Medium.ttf");
+  src: url("../assets/font/roboto/Roboto-Medium.ttf");
   font-weight: 500; }
 
 @font-face {
   font-family: "Roboto";
-  src: url("/assets/font/roboto/Roboto-Bold.ttf");
+  src: url("../assets/font/roboto/Roboto-Bold.ttf");
   font-weight: 700; }
 
 a {
