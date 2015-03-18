@@ -1,5 +1,5 @@
 angular.module('app.factories', [])
 
-.factory('test', function () {
-
-});
+.factory('AuthFactory', [function() {
+    return {}
+}]);
