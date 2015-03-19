@@ -1,5 +1,5 @@
 angular.module('app', ['ui.router', 'ngStorage', 'ngResource', 'ngSanitize', 'app.controllers', 'app.factories', 'app.services'])
-    .run(['$rootScope', '$state', '$stateParams', '$location', 'AuthFactory',
+    .run(['$rootScope', '$state', '$stateParams', '$location',
         function($rootScope, $state, $stateParams, $location) {}
     ])
 
@@ -24,5 +24,6 @@ angular.module('app', ['ui.router', 'ngStorage', 'ngResource', 'ngSanitize', 'ap
 }])
 
 .constant('RottenTomatoesConfig', {
-    'key': 'tpuzgqpjcjtvszmgvf9fqjfg'
+    'key': 'tpuzgqpjcjtvszmgvf9fqjfg',
+    'base_url': 'http://api.rottentomatoes.com/api/public/v1.0'
 });
