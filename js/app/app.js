@@ -1,14 +1,13 @@
 angular.module('app', ['ui.router', 'ngStorage', 'ngResource', 'ngSanitize', 'app.controllers', 'app.factories', 'app.services'])
     .run(['$rootScope', '$state', '$stateParams', '$location', 'AuthFactory',
-        function($rootScope, $state, $stateParams, $location) {
-        }
+        function($rootScope, $state, $stateParams, $location) {}
     ])
 
-.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $stateProvider
 
     //root controller for whole app
-    .state('site', {
+        .state('site', {
         abstract: true,
         controller: 'ApplicationCtrl',
         templateUrl: 'templates/site.html'
@@ -22,4 +21,8 @@ angular.module('app', ['ui.router', 'ngStorage', 'ngResource', 'ngSanitize', 'ap
     })
 
     $urlRouterProvider.otherwise('/main');
-}]);
+}])
+
+.constant('RottenTomatoesConfig', {
+    'key': 'tpuzgqpjcjtvszmgvf9fqjfg'
+});
