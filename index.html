@@ -14,7 +14,6 @@
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper deep-orange darken-4">
-                
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="sass.html">Rotten Tomatoes</a>
@@ -47,7 +46,7 @@
     <div class="container">
         <div class="section">
             <div class="row">
-                <h5 class="center-align">By combining two popular platforms our app makes it easy to find and digitally pencil upcoming movies into your calendar. Just fill out the form below to find the movies your most excited about and we will provide you with a list. Select only the titles you want and we'll add them to your calendar. Simple as that.</h5>
+                <h5 class="center-align">By combining two popular platforms our app makes it easy to find movies and decide what you'd like to watch. Just fill out the form below to narrow down what your looking for and we'll match your search with reviews and trailers to make your decision that much easier.</h5>
             </div>
             <div class="row">
                 <div class="col s12 m6">
@@ -59,8 +58,8 @@
                 </div>
                 <div class="col s12 m6">
                     <div class="icon-block">
-                        <h2 class="center-align"><img class="responsive-img" src="images/gcal_logo.gif"></h2>
-                        <p class="light">Google Calendar is a time-management web application and mobile app created by Google...<a href="http://en.wikipedia.org/wiki/Google_Calendar">Wikipedia</a>
+                        <h2 class="center-align"><img class="responsive-img" src="images/ytlogo-m.png"></h2>
+                        <p class="light">YouTube is a video-sharing website headquartered in San Bruno, California....<a href="http://en.wikipedia.org/wiki/YouTube">Wikipedia</a>
                         </p>
                     </div>
                 </div>
@@ -74,19 +73,19 @@
                             <div class="input-field col s12 m4">
                                 <div class="row">
                                     <div class="input-field col s12">
-                                        <i class="mdi-action-today prefix"></i>
-                                        <input type="date" class="datepicker">
-                                        <label>Earliest Release Date</label>
-                                    </div>
-                                    <div class="input-field col s12">
-                                        <i class="mdi-action-event prefix"></i>
-                                        <input type="date" class="datepicker">
-                                        <label>Latest Release Date</label>
+                                        <i class="mdi-maps-local-movies prefix"></i>
+                                        <input id="actor" type="text" class="validate">
+                                        <label>Movie Title</label>
                                     </div>
                                     <div class="input-field col s12">
                                         <i class="mdi-av-recent-actors prefix"></i>
                                         <input id="actor" type="text" class="validate">
                                         <label>Actor</label>
+                                    </div>
+                                    <div class="input-field col s12">
+                                        <i class="mdi-av-movie prefix"></i>
+                                        <input id="actor" type="text" class="validate">
+                                        <label>Genre</label>
                                     </div>
 
                                 </div>
@@ -143,6 +142,9 @@
                                 </div>
                             </div>
                         </div>
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="mdi-content-send right"></i>
+                        </button>
                     </form>
                 </div>
             </div>
