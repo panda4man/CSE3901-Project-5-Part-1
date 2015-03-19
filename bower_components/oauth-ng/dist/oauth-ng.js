@@ -331,7 +331,7 @@ directives.directive('oauth', function(AccessToken, Endpoint, Profile, $location
     };
 
     var initAttributes = function() {
-      scope.authorizePath = scope.authorizePath || '/auth';
+      scope.authorizePath = scope.authorizePath || '/o/oauth2/auth';
       scope.tokenPath     = scope.tokenPath     || '/oauth/token';
       scope.template      = scope.template      || 'bower_components/oauth-ng/dist/views/templates/default.html';
       scope.responseType  = scope.responseType  || 'token';

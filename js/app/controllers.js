@@ -1,16 +1,11 @@
 angular.module('app.controllers', [])
 
-.controller('ApplicationCtrl', function($scope, $rootScope, $timeout, AccessToken, $location) {
+.controller('ApplicationCtrl', function($scope, $rootScope, $timeout, AccessToken, $location, GAPI) {
     $timeout(function() {
         $scope.logged = !!AccessToken.get();
-
-        if($location.path() == '/login' && $scope.logged){
-            $location.path('/main');
-        }
-        if($location.path() == '/main' && !$scope.logged){
-            $location.path('/login');
-        }
     }, 0);
+
+
 
     /*if ($location.path() == '/main' && !$scope.logged) {
         $location.path('/login');
@@ -42,10 +37,35 @@ angular.module('app.controllers', [])
     });
 })
 
-.controller('MainCtrl', function($scope) {
+.controller('MainCtrl', function($scope, $location, $http, AccessToken, Calendar) {
+    if (!$scope.logged) {
+        $location.path('/login');
+    }
+
+    $scope.test = function() {
+        $scope.calendars = Calendar.getCalendarList();
+/*
+        $http.jsonp('https://www.googleapis.com/auth/calendar/v3/users/me/calendarList?access_token=' + AccessToken.get().access_token).
+        success(function(data, status, headers, config) {
+            // this callback will be called asynchronously
+            // when the response is available
+            console.log(data);
+        }).
+        error(function(data, status, headers, config) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            console.log(config);
+            console.log(status);
+            console.log(data);
+        });
+*/
+
+    }
     $scope.title = "heyy i am a title :)";
 })
 
-.controller('LogInCtrl', function($scope) {
-
+.controller('LogInCtrl', function($scope, $location) {
+    if ($scope.logged) {
+        $location.path('/main');
+    }
 });
