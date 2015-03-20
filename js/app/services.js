@@ -22,4 +22,18 @@ angular.module('app.services', [])
             return deferred.promise;
         }
     }
+}])
+
+/**
+*	Use this to display console logs only in dev mode to prevent
+* 	outputing sensitive data to the user console in production.
+*/
+.service('Console', ['Environment', function (E) {
+	return {
+		log: function (msg) {
+			if(E.debug){
+				console.log(msg);
+			}
+		}
+	}
 }]);
