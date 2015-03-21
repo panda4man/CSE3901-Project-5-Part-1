@@ -7,12 +7,15 @@ angular.module('app.factories', [])
     /* PUBLIC METHODS */
     return {
         search: function (data) {
-        	if(data.year){
+        	if(data.year && data.year != ""){
         		_y = data.year
         	}
         	var url = OMDC.base_url;
         	url += QSBF.buildQuery(['t', 'tomatoes', 'y', 'plot'], [encodeURI(data.title), _tomatoes, _y, _plot]);
         	return HttpService.get(url);
+        },
+        queryExtraParams: function (results) {
+        	
         }
     }
 }])
