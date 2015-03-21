@@ -6,7 +6,6 @@
     <base href="/">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>CSE3901 Project 5 Part 2</title>
-
     <link href="/css/style.css" rel="stylesheet">
     <link href="/css/materialize.css" rel="stylesheet">
     <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css">-->
@@ -28,7 +27,7 @@
                 <ul class="side-nav" id="mobile-demo">
                     <li><a href="sass.html">Rotten Tomatoes</a>
                     </li>
-                     <li><a ui-sref="site.main">Search</a>
+                    <li><a ui-sref="site.main">Search</a>
                     </li>
                     <li><a ui-sref="site.about">About</a></li>
                     <li><a ui-sref="site.landing">Home</a></li>
@@ -76,6 +75,27 @@
     <script type="text/javascript" src="js/app/controllers.js"></script>
     <script type="text/javascript" src="js/app/factories.js"></script>
     <script type="text/javascript" src="js/app/services.js"></script>
+     <script type="text/javascript"> // Helper function to display JavaScript value on HTML page.
+
+
+            // Called automatically when JavaScript client library is loaded.
+            function onClientLoad() {
+                gapi.client.load('youtube', 'v3', onYouTubeApiLoad);
+
+            }
+
+            // Called automatically when YouTube API interface is loaded (see line 9).
+            function onYouTubeApiLoad() {
+                
+                gapi.client.setApiKey('AIzaSyCcaPGP6qITSW-5SfGYJDRuharIBY6V_2Y');
+
+            }
+
+
+
+</script>
+    <script type="text/javascript" src="https://apis.google.com/js/client.js?onload=onClientLoad"></script>
+   
 </body>
 
 </html>

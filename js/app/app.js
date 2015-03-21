@@ -1,5 +1,6 @@
 angular.module('app', ['ui.router', 'ngStorage', 'ngResource', 'ngSanitize', 'app.controllers', 'app.factories', 'app.services'])
-    .run([function() {
+    .run(['YouTubeFactory', function(YouTubeFactory) {
+       // YouTubeFactory.onClientLoad();
     }])
 
 .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', '$httpProvider', function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
