@@ -1,29 +1,24 @@
 <div class="section">
     <!--   User Input   -->
     <div class="row card-panel red lighten-5">
-        <form class="col s12" name="movieSearch" novalidate ng-submit="movieSearch.$valid && processForm()">
+        <form class="col s12">
             <div class="row">
                 <div class="input-field col s12 m4">
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="mdi-maps-local-movies prefix"></i>
-                            <input ng-model="form.title" id="actor" type="text" class="validate" required>
+                            <input id="actor" type="text" class="validate">
                             <label>Movie Title</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="mdi-av-recent-actors prefix"></i>
-                            <input ng-model="form.actor" id="actor" type="text" class="validate">
+                            <input id="actor" type="text" class="validate">
                             <label>Actor</label>
                         </div>
                         <div class="input-field col s12">
                             <i class="mdi-av-movie prefix"></i>
-                            <input ng-model="form.genre" id="actor" type="text" class="validate">
+                            <input id="actor" type="text" class="validate">
                             <label>Genre</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-device-access-time prefix"></i>
-                            <input ng-model="form.genre" id="actor" type="number" class="validate">
-                            <label>Year</label>
                         </div>
                     </div>
                 </div>
@@ -33,21 +28,21 @@
                             <label>Min Critic Rating</label>
                             <br>
                             <p class="range-field">
-                                <input type="range" ng-model="form.minCriticRating" id="min_critic_rating" min="0" max="100" />
+                                <input type="range" id="min_critic_rating" min="0" max="100" />
                             </p>
                         </div>
                         <div class="input-field col s12">
                             <label>Min User Rating</label>
                             <br>
                             <p class="range-field">
-                                <input ng-model="form.minUserRating" type="range" id="min_user_rating" min="0" max="100" />
+                                <input type="range" id="min_user_rating" min="0" max="100" />
                             </p>
                         </div>
                         <div class="input-field col s12">
                             <label for="max_run">Max Runtime (minutes)</label>
                             <br>
                             <p class="range-field">
-                                <input ng-model="form.maxRunTime" type="range" id="max_run" min="0" max="240" />
+                                <input type="range" id="max_run" min="0" max="240" />
                             </p>
                         </div>
                     </div>
@@ -55,56 +50,64 @@
                 <div class="input-field col s12 m4">
                     <div class="row">
                         <div class="input-field col s12">
+                            <select id="MPAA">
+                                <option value="" disabled selected>Choose a maximum MPAA rating</option>
+                                <option value="G">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                        </div>
+                        <div class="input-field col s12">
                             <p>
-                                <input ng-model="form.releasedOnDvd" type="checkbox" id="dvd-ch" />
-                                <label for="dvd-ch">DVD</label>
+                                <input type="checkbox" id="dvd-ch" />
+                                <label for="dvd-ch">DVD </label>
                             </p>
                         </div>
                         <div class="input-field col s12">
                             <p>
-                                <input ng-model="form.releasedInTheater" type="checkbox" id="theater-ch" />
+                                <input type="checkbox" id="theater-ch" />
                                 <label for="theater-ch">Theaters</label>
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <button class="btn waves-effect waves-light" ng-disabled="movieSearch.$invalid" ng-click="data.submitted = true">Submit
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                 <i class="mdi-content-send right"></i>
             </button>
         </form>
     </div>
     <div class="row">
-        <div class="col s12">
-            <ul class="tabs">
-                <li class="tab col s3"><a href="#test1">Test 1</a></li>
-                <li class="tab col s3"><a class="active" href="#test2">Test 2</a></li>
-                <li class="tab col s3"><a href="#test3">Test 3</a></li>
-                <li class="tab col s3"><a href="#test4">Test 4</a></li>
-            </ul>
+        <div class="col s12 m6">
+            <div class="card-panel blue-grey lighten-5">
+                <div class="row">
+                    <div class="col s4">
+                        <img class="responsive-img" src="http://ia.media-imdb.com/images/M/MV5BMTQ1MjQwMTE5OF5BMl5BanBnXkFtZTgwNjk3MTcyMDE@._V1_SX300.jpg">
+                    </div>
+                    <div class="col s8">
+                        <h5>Title</h5>
+                        <h6>Year</h6>
+                        <h6>Actors: </h6>
+                        <h6>Director: </h6>
+                        <h6>RT Critic Rating: </h6>
+                        <h6>RT User Rating: </h6>
+                        <h6></h6>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="test1" class="col s12">Test 1</div>
-        <div id="test2" class="col s12">Test 2</div>
-        <div id="test3" class="col s12">Test 3</div>
-        <div id="test4" class="col s12">Test 4</div>
-    </div>
-    <br>
-    <div class="divider"></div>
-    <br>
-    <h5>Upcoming Films</h5>
-    <div class="row card-panel" ng-repeat="movie in movies.upcomingMovies.movies track by movie.id">
-        <div class="col s12">
-            <span>Title: {{movie.title}}</span>
-            <br>
-            <span>Year:{{movie.year}}</span>
-            <br>
-            <span class="blue-text lighten-2">Rating:{{movie.mpaa_rating}}</span>
-        </div>
-        <div class="col s12">
-            <p>{{movie.synopsis}}</p>
+        <div class="col s12 m6">
+            <div class="card-panel blue-grey lighten-4">
+                <h6>Plot:</h6>
+                <p>Cras iaculis gravida libero, tempor ullamcorper felis tempor sed. Pellentesque lacinia, neque sed dignissim tempor, lacus tellus iaculis massa, vel iaculis lorem diam eu dolor. In malesuada ullamcorper dolor ac bibendum. Donec lorem elit, imperdiet vitae vestibulum quis, bibendum non urna. Aliquam nec massa ullamcorper, egestas est eget, congue ante. Cras neque nisi, fringilla quis ex eget, malesuada semper lorem.</p>
+            </div>
         </div>
     </div>
-    <br>
+    <div class="row">
+        <div class="video-container">
+            <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
 </div>
-<br>
 <br>
