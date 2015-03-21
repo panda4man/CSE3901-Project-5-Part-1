@@ -4,7 +4,7 @@ angular.module('app.controllers', [])
     $scope.debug = Environment.debug;
 })
 
-.controller('MainCtrl', function($scope, OpenMovieDatabaseFactory, Environment, Console, CleanFormService, YouTubeFactory) {
+.controller('MainCtrl', function($scope, OpenMovieDatabaseFactory, Environment, Console, CleanFormService, YouTubeFactory, $window) {
     $scope.data = {
         submitted: false,
         success: false
@@ -27,7 +27,6 @@ angular.module('app.controllers', [])
             CleanFormService.clean($scope.form);
             Console.log(data);
             YouTubeFactory.search($scope.movie.Title);
-           
         }, function(data) {
             $scope.data.submitted = false;
             $scope.data.success = true;

@@ -28,7 +28,7 @@ angular.module('app.factories', [])
     function showResponse(response) {
             var responseString = JSON.stringify(response, '', 2);
             document.getElementById('response').src = "//www.youtube.com/embed/" + response.items[0].id.videoId + "?rel=0";
-            console.log(responseString);
+            document.getElementById('movie_image').src = response.items[0].snippet.thumbnails.high.url;
         }
         // Called automatically with the response of the YouTube API request.
     function onSearchResponse(response) {
@@ -41,10 +41,8 @@ angular.module('app.factories', [])
                 part: 'snippet',
                 q: title + " official trailer",
             });
-
-            return request.execute(onSearchResponse);
+            request.execute(onSearchResponse);
         }
-
     }
 }])
 
