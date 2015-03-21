@@ -27,13 +27,14 @@ angular.module('app.controllers', [])
         OpenMovieDatabaseFactory.search({title: $scope.form.title, year:$scope.form.year}).then(function (data) {
             $scope.data.submitted = false;
             $scope.data.success = true;
+            $scope.movie = data;
             CleanFormService.clean($scope.form);
-            console.log(data);
+            Console.log(data);
         }, function (data) {
             $scope.data.submitted = false;
             $scope.data.success = true;
-            console.log(data);
-        })
+            Console.log(data);
+        });
     }  
 })
 
