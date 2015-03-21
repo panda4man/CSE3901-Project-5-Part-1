@@ -22,7 +22,7 @@
                         </div>
                         <div class="input-field col s12">
                             <i class="mdi-device-access-time prefix"></i>
-                            <input ng-model="form.genre" id="actor" type="number" class="validate">
+                            <input ng-model="form.year" id="actor" type="number" class="validate">
                             <label>Year</label>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
             </button>
         </form>
     </div>
-    <div class="row">
+    <div class="row" ng-show="data.submitted">
         <div class="col s12 m6">
             <div class="card-panel blue-grey lighten-5">
                 <div class="row">

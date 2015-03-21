@@ -25,7 +25,6 @@ angular.module('app.controllers', [])
     $scope.processForm = function () {
         $scope.data.submitted = true;
         OpenMovieDatabaseFactory.search({title: $scope.form.title, year:$scope.form.year}).then(function (data) {
-            $scope.data.submitted = false;
             $scope.data.success = true;
             $scope.movie = data;
             CleanFormService.clean($scope.form);
