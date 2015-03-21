@@ -3,70 +3,15 @@
     <div class="row card-panel red lighten-5">
         <form class="col s12" name="movieSearch" novalidate ng-submit="movieSearch.$valid && processForm()">
             <div class="row">
-                <div class="input-field col s12 m4">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="mdi-maps-local-movies prefix"></i>
-                            <input ng-model="form.title" id="actor" type="text" class="validate" required>
-                            <label>Movie Title</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-av-recent-actors prefix"></i>
-                            <input ng-model="form.actor" id="actor" type="text" class="validate">
-                            <label>Actor</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-av-movie prefix"></i>
-                            <input ng-model="form.genre" id="actor" type="text" class="validate">
-                            <label>Genre</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="mdi-device-access-time prefix"></i>
-                            <input ng-model="form.year" id="actor" type="number" class="validate">
-                            <label>Year</label>
-                        </div>
-                    </div>
+                <div class="input-field col s12 m6">
+                    <i class="mdi-maps-local-movies prefix"></i>
+                    <input ng-model="form.title" id="actor" type="text" class="validate" required>
+                    <label>Movie Title</label>
                 </div>
-                <div class="input-field col s12 m4">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <label>Min Critic Rating</label>
-                            <br>
-                            <p class="range-field">
-                                <input type="range" ng-model="form.minCriticRating" id="min_critic_rating" min="0" max="100" />
-                            </p>
-                        </div>
-                        <div class="input-field col s12">
-                            <label>Min User Rating</label>
-                            <br>
-                            <p class="range-field">
-                                <input ng-model="form.minUserRating" type="range" id="min_user_rating" min="0" max="100" />
-                            </p>
-                        </div>
-                        <div class="input-field col s12">
-                            <label for="max_run">Max Runtime (minutes)</label>
-                            <br>
-                            <p class="range-field">
-                                <input ng-model="form.maxRunTime" type="range" id="max_run" min="0" max="240" />
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="input-field col s12 m4">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <p>
-                                <input ng-model="form.releasedOnDvd" type="checkbox" id="dvd-ch" />
-                                <label for="dvd-ch">DVD </label>
-                            </p>
-                        </div>
-                        <div class="input-field col s12">
-                            <p>
-                                <input ng-model="form.releasedInTheater" type="checkbox" id="theater-ch" />
-                                <label for="theater-ch">Theaters</label>
-                            </p>
-                        </div>
-                    </div>
+                <div class="input-field col s12 m6">
+                    <i class="mdi-device-access-time prefix"></i>
+                    <input ng-model="form.year" id="actor" type="number" class="validate">
+                    <label>Year</label>
                 </div>
             </div>
             <button class="btn waves-effect waves-light" ng-disabled="movieSearch.$invalid" ng-click="data.submitted = true">Submit
@@ -74,7 +19,16 @@
             </button>
         </form>
     </div>
-    <div class="row" ng-show="data.submitted">
+    <!-- COOL LOADING MESSAGE -->
+    <div class="row" ng-show="data.submitted && !data.success">
+        <div class="col s12 m6 offset-m3">
+            <div class="card-panel center">
+                <h5 class="black-text">Sending your request...
+                </h5>
+            </div>
+        </div>
+    </div>
+    <div class="row" ng-show="data.success">
         <div class="col s12 m6">
             <div class="card-panel blue-grey lighten-5">
                 <div class="row">

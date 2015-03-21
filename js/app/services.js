@@ -28,14 +28,7 @@ angular.module('app.services', [])
     return {
         clean: function(form) {
             form.title = '',
-            form.actor = '',
-            form.genre = '',
-            form.year = '',
-            form.minCriticRating = 20,
-            form.minUserRating = 20,
-            form.maxRunTime = 120,
-            form.releasedOnDvd = true,
-            form.releasedInTheater = true
+            form.year = ''
         }
     }
 }])

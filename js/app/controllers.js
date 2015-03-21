@@ -12,23 +12,18 @@ angular.module('app.controllers', [])
 
     $scope.form = {
         title:'',
-        actor:'',
-        genre:'',
         year:'',
-        minCriticRating: 20,
-        minUserRating: 20,
-        maxRunTime: 120,
-        releasedOnDvd: true,
-        releasedInTheater: true
     }
     
     $scope.processForm = function () {
         $scope.data.submitted = true;
+        $scope.data.success = false;
         OpenMovieDatabaseFactory.search({title: $scope.form.title, year:$scope.form.year}).then(function (data) {
             $scope.data.success = true;
             $scope.movie = data;
             CleanFormService.clean($scope.form);
             Console.log(data);
+            //do youtube stuff
         }, function (data) {
             $scope.data.submitted = false;
             $scope.data.success = true;
